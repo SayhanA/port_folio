@@ -97,7 +97,7 @@
 
   <body>
     <main>
-      <ul class="social_links"></ul>    
+      <ul class="social_links"></ul>
 
       <h1>Sayhan Ahmed – MERN Stack Developer & Full-Stack Engineer</h1>
     </main>
@@ -146,6 +146,9 @@
 
       const socialContainer = document.querySelector(".social_links");
       const socialItems = document.querySelectorAll(".social-item");
+      document
+        .querySelector(".social_link_text")
+        .classList.add("active_social_link_text");
 
       socialContainer.addEventListener("mouseover", (e) => {
         const hoveredItem = e.target.closest(".social-item");
