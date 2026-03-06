@@ -1,7 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+:root{
+  --background: #000000;
+  --shadow: rgba(255, 255, 255, 0.096);
+  --accent: #ffffff;
+  --text: #d8d8d8;
+  --text-sec: #2d8cff;
+
+  /* --background: #fff;
+  --shadow: rgba(0, 0, 0, 0.08);
+  --accent: #1a1a1a;
+  --text: #333;
+  --text-sec: #2d8cff; */
+}
+
+body{
+  background-color: var(--background);
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
 }
 
 /* Header */
@@ -10,12 +35,19 @@ header {
   max-width: 1400px;
   margin: 20px auto;
   padding: 15px;
-  background: #ffffff;
+  /* background: var(--background); */
+  background-color: #00000030;
+  backdrop-filter: blur(15px);
   border-radius: 50px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--shadow);
+  box-shadow: 0 10px 25px var(--shadow);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
 }
 
 /* Logo */
@@ -25,7 +57,7 @@ header {
   gap: 10px;
   font-size: 20px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--accent);
 }
 
 .logo img {
@@ -50,14 +82,14 @@ nav ul {
 
 nav ul li a {
   text-decoration: none;
-  color: #333;
+  color: var(--text);
   font-size: 16px;
   font-weight: 500;
   transition: 0.3s ease;
 }
 
 nav ul li a:hover {
-  color: #2d8cff;
+  color: var(--text-sec);
 }
 
 /* Button */
@@ -66,18 +98,18 @@ nav button {
   padding: 10px 22px;
   border: none;
   border-radius: 25px;
-  background: linear-gradient(135deg, #4da3ff, #2d8cff);
-  color: #fff;
+  background: linear-gradient(135deg, var(--text-sec), var(--text-sec));
+  color: var(--background);
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
   transition: 0.3s ease;
-  box-shadow: 0 5px 15px rgba(45, 140, 255, 0.3);
+  box-shadow: 0 5px 15px var(--shadow);
 }
 
 nav button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(45, 140, 255, 0.4);
+  box-shadow: 0 8px 20px var(--shadow);
 }
 
 /* Responsive */
@@ -103,7 +135,6 @@ nav button:hover {
 
 main {
   height: 300vh;
-  padding: 2rem;
 }
 
 /* Sidebar container */
@@ -115,7 +146,7 @@ main {
   display: flex;
   flex-direction: column;
   list-style: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px var(--shadow);
 }
 
 .social-item a {
@@ -182,4 +213,11 @@ main {
 .facebook:hover svg,
 .facebook:hover p {
   color: #1877f2 !important;
+}
+
+
+
+.container{
+  max-width: 1400px;
+  margin: auto;
 }
