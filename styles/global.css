@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 * {
   margin: 0;
@@ -8,25 +6,25 @@
   box-sizing: border-box;
 }
 
-:root{
-  --background: #000000;
+:root {
+  /* --background: #000000;
   --shadow: rgba(255, 255, 255, 0.096);
   --accent: #ffffff;
   --text: #d8d8d8;
-  --text-sec: #2d8cff;
+  --text-sec: #2d8cff; */
 
-  /* --background: #fff;
+  --background: #fff;
   --shadow: rgba(0, 0, 0, 0.08);
   --accent: #1a1a1a;
   --text: #333;
-  --text-sec: #2d8cff; */
+  --text-sec: #2d8cff;
 }
 
-body{
+body {
   background-color: var(--background);
   padding: 0;
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 /* Header */
@@ -36,7 +34,7 @@ header {
   margin: 20px auto;
   padding: 15px;
   /* background: var(--background); */
-  background-color: #00000030;
+  background-color: color-mix(in srgb, var(--background) 40%, transparent);
   backdrop-filter: blur(15px);
   border-radius: 50px;
   border: 1px solid var(--shadow);
@@ -215,9 +213,7 @@ main {
   color: #1877f2 !important;
 }
 
-
-
-.container{
+.container {
   max-width: 1400px;
   margin: auto;
 }
