@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hero Img</title>
+    <style>
+      section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .img_container {
+        position: relative;
+        width: 360px;
+        height: 600px;
+      }
+
+      .img_container > .block {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 360px;
+        height: 360px;
+        border-radius: 5%;
+        transition: all 0.5s ease;
+      }
+
+      .img_container > .primary-block {
+        background-color: #009dff4f;
+        transform: scale(0);
+        animation: block-ani 1s ease-in-out 0s 1 normal forwards;
+      }
+
+      @keyframes block-ani {
+        0% {
+          transform: translate(-50%, -50%) scale(0);
+        }
+        100% {
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
+
+      .img_container > .secondary-block {
+        background-color: #009dff;
+        left: 50%;
+        right: 50%;
+        /* transform: translate(-50%, -50%) rotate(0deg); */
+        transform: scale(0);
+        z-index: 20;
+        overflow: hidden;
+        transition: transform 0.6s ease;
+        animation: block-ani-second 1s ease-in-out 0.5s 1 normal forwards;
+      }
+
+      @keyframes block-ani-second {
+        0% {
+          transform: translate(-50%, -50%) scale(0) rotate(0deg);
+        }
+        100% {
+          transform: translate(-50%, -50%) scale(1) rotate(30deg);
+        }
+      }
+
+      .img_container > .secondary-block > img {
+        width: 300px;
+        position: absolute;
+        bottom: -65px;
+        left: 45%;
+        z-index: 10;
+        transform: translateX(-50%) rotate(-30deg) translateY(100%);
+        animation: image-second 0.6s ease-in-out 1s 1 normal forwards;
+      }
+
+      @keyframes image-second {
+        0% {
+          transform: translateX(-50%) rotate(-30deg) translateY(100%);
+        }
+        100% {
+          transform: translateX(-50%) rotate(-30deg) translateY(0);
+        }
+      }
+
+      .img_container > .tertiary-block > img {
+        width: 300px;
+        position: absolute;
+        top: -152px;
+        left: 50.2%;
+        z-index: -10;
+        transform: translateX(-50%) translateY(100%);
+        opacity: 0;
+        animation: tertiary-img 0.6s ease-in-out 1.09s 1 normal forwards;
+      }
+
+      @keyframes tertiary-img {
+        0% {
+          transform: translateX(-50%) translateY(100%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(-50%) translateY(0);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="img_container">
+        <div class="primary-block block"></div>
+        <div class="secondary-block block">
+          <img src="./assets/H.webp" alt="Second Image" />
+        </div>
+        <div class="tertiary-block block">
+          <img src="./assets/H-2.png" alt="Third Image" />
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

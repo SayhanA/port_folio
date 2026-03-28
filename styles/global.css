@@ -27,6 +27,30 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+body.dark-mode {
+  --background: #0d0d0d;
+  --shadow: rgba(255, 255, 255, 0.08);
+  --accent: #ffffff;
+  --text: #e5e5e5;
+  --text-sec: #4da3ff;
+}
+
+
+#themeToggle {
+  height: 43px;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  background: var(--background);
+  color: var(--accent);
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+#themeToggle:hover {
+  transform: scale(1.1);
+}
+
 /* Header */
 header {
   width: 95%;
@@ -158,7 +182,7 @@ main {
 /* Each item */
 .social-item {
   margin-bottom: 1px;
-  background: #f6f5ff;
+  background: var(--background);
   padding: 0.8rem;
   display: flex;
   align-items: center;
@@ -169,7 +193,7 @@ main {
 }
 
 .social-item:hover {
-  background: #d4c8ff;
+  background: var(--background);
 }
 
 .social-item svg {
